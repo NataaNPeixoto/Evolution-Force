@@ -1,6 +1,6 @@
 // Temporizador de contagem regressiva
 function updateCountdown() {
-  // Defina a data de término para daqui a 2 dias
+  // Define a data de término para daqui a 2 dias
   const now = new Date();
   const blackFriday = new Date(now);
   blackFriday.setDate(now.getDate() + 2);
@@ -24,7 +24,7 @@ function updateCountdown() {
   }
 }
 
-// Inicie a contagem regressiva e atualize a cada segundo
+// Inicia a contagem regressiva e atualize a cada segundo
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
@@ -49,11 +49,12 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-// Adicione funcionalidade de rolagem suave para a seção de planos ao clicar em scroll-button
+// Adiciona a rolagem suave para a seção de planos ao clicar em scroll-button
 const scrollButton = document.querySelector('.scroll-button');
 const plansSection = document.querySelector('.plans');
 
-scrollButton.addEventListener('click', function() {
+scrollButton.addEventListener('click', function(e) {
+  e.preventDefault();
   plansSection.scrollIntoView({ behavior: 'smooth' });
 });
 
